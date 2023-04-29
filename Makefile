@@ -1,5 +1,5 @@
 #Για χρηση απο τα windows με το mingw32 και mingw.threads
-
+# Συνιστάται χρήση σε Visual Studio 2022
 CC = g++
 INCLUDE = C:\MinGW\bin
 
