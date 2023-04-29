@@ -4,6 +4,7 @@
 #include "Classes.h"
 #include <chrono>
 #include <thread>
+#include "mingw.thread.h"
 #include <windows.h>
 #include <time.h>
 
@@ -25,7 +26,7 @@ int main() {
 	bool entityslot;	//checks if there is a vampire or werewolf in a slot so that you don't place another one in the same slot
 
 	//			GET BASIC INFORMATION FROM THE USER
-
+	system("ClS");
 	cout << "Type your username\n";
 	cin >> username_input;
 
