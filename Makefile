@@ -3,16 +3,16 @@
 CC = g++
 INCLUDE = C:\MinGW\bin
 
-CXXFLAGS = -I$(INCLUDE) -D _WIN32_WINNT=0x0A00
-OBJS = main.o
-EXEC = main
+CXXFLAGS = -D _WIN32_WINNT=0x0A00 -I$(INCLUDE)
+OBJS = main.o 
+EXEC = main.exe
 
 $(EXEC): $(OBJS)
-	$(CC) $(OBJS) -o main
+	$(CC) -o main $(OBJS)
 
 run: $(EXEC)
 	./$(EXEC)
 
 clean:
-	rm -f $(OBJS) $(EXEC)
+	del $(OBJS) $(EXEC)
 
