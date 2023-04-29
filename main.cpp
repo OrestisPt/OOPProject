@@ -4,7 +4,6 @@
 #include "Classes.h"
 #include <chrono>
 #include <thread>
-#include "mingw.thread.h"
 #include <windows.h>
 #include <time.h>
 
@@ -77,7 +76,7 @@ int main() {
 
 	cout << "Generating map...\n";
 
-	this_thread::sleep_for(3s);
+	Sleep(300);
 
 	system("CLS");
 
@@ -144,7 +143,7 @@ int main() {
 	//						WHILE LOOP FOR EVERY ROUND OF THE GAME UNTIL IT'S OVER
 
 	while(exit!= 1){
-		this_thread::sleep_for(100ms);
+		Sleep(100);
 		if (Vampires.size() == 0 && Werewolves.size() == 0) {
 			cout << "\n\n\nIt's a draw!";
 			delete[] board;
@@ -203,20 +202,20 @@ int main() {
 						cp->set_health(5);
 					}
 					cout << FCYN("\n\n\t\t\t\tUsed a magic potion!");
-					this_thread::sleep_for(1200ms);
+					Sleep(1200);
 					system("CLS");
 					nmap.printboard(diameter, board, daynightcount);
 				}
 				else {
 					cout << FRED("\n\n\t\t\tYou dont have any magic potions right now!");
-					this_thread::sleep_for(1200ms);
+					Sleep(1200);
 					system("CLS");
 					nmap.printboard(diameter, board, daynightcount);
 				}
 			}
 			if(daynightcount <= 20 && player.get_team() == 2){
 				cout << FYEL("\n\n\t\t\tYou cannot use a magic potion for Werewolves at day!");
-				this_thread::sleep_for(1200ms);
+				Sleep(1200);
 				system("CLS");
 				nmap.printboard(diameter, board, daynightcount);
 			}
@@ -229,20 +228,20 @@ int main() {
 						cp->set_health(5);
 					}
 					cout << FCYN("\n\n\t\t\t\tUsed a magic potion!");
-					this_thread::sleep_for(1200ms);
+					Sleep(1200);
 					system("CLS");
 					nmap.printboard(diameter, board, daynightcount);
 				}
 				else {
 					cout << FRED("\n\n\t\t\tYou dont have any magic potions right now!");
-					this_thread::sleep_for(1200ms);
+					Sleep(1200);
 					system("CLS");
 					nmap.printboard(diameter, board, daynightcount);
 				}
 			}
 			if(daynightcount > 20 && player.get_team() == 1){
 				cout << FYEL("\n\n\t\t\tYou cannot use a magic potion for Vampires at night!");
-				this_thread::sleep_for(1200ms);
+				Sleep(1200);
 				system("CLS");
 				nmap.printboard(diameter, board, daynightcount);
 			}
